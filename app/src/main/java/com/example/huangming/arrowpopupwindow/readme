@@ -1,0 +1,19 @@
+     带箭头的选择框ArrowPopupWindow使用说明：
+       
+       view.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				ArrowPopupWindow win=new ArrowPopupWindow(OnlineChatActivity.this);
+
+				win.addPopuItem(new ArrowPopupWindow.PopuItem("消息定制", ContextCompat.getDrawable(mcontext, R.drawable.assistant_msg_custom),"消息定制"));
+				win.addPopuItem(new ArrowPopupWindow.PopuItem("消息管理", ContextCompat.getDrawable(mcontext,R.drawable.assistant_msg_manage),"消息定制2"));
+				win.setOnPopuItemClickListener(new ArrowPopupWindow.OnPopuItemClickListener() {
+					@Override
+					public void onItemClick(ArrowPopupWindow.PopuItem item) {
+						//根据被选中的item作相应处理
+					}
+
+				});
+				win.show(view);
+			}
+		});
